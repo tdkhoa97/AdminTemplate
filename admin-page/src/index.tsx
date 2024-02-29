@@ -21,28 +21,26 @@ root.render(
   </React.StrictMode>
 );
 
+// function renderApp() {
+//   ReactDOM.render(
+//     // <StylesProvider injectFirst>
+//     <AppContainer>
+//       <BrowserRouter children={routes} basename={baseUrl} />
+//     </AppContainer>
+//     // </StylesProvider>,
+//     // document.getElementById('react-app')
+//     document.getElementById('root') as HTMLElement
+//   );
+// }
 
-
-function renderApp() {
-  ReactDOM.render(
-    // <StylesProvider injectFirst>
-    <AppContainer>
-      <BrowserRouter children={routes} basename={baseUrl} />
-    </AppContainer>
-    // </StylesProvider>,
-    // document.getElementById('react-app')
-    document.getElementById('root') as HTMLElement
-  );
-}
-
-renderApp();
+// renderApp();
 // Allow Hot Module Replacement
-if (module.hot) {
-  module.hot.accept('./routes', () => {
-    routes = require<typeof RoutesModule>('./routes').routes;
-    renderApp();
-  });
-}
+// if (module.hot) {
+//   module.hot.accept('./routes', () => {
+//     routes = require<typeof RoutesModule>('./routes').routes;
+//     renderApp();
+//   });
+// }
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

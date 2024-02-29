@@ -1,15 +1,15 @@
-﻿import * as Components from '@dev/components';
+﻿// import * as Components from '@dev/components';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 // import { DragDropContext } from 'react-dnd';
 // import HTML5Backend from 'react-dnd-html5-backend';
-import { PartialMenuLeft } from '../PartialMenuLeft';
+// import { PartialMenuLeft } from '../PartialMenuLeft';
 // import { PATH } from '@dev/consts';
 // import * as Utils from '@dev/env';
 // import * as _utils from '@dev/_utils';
 // import * as HrwComponents from '@haravan/hrw-react-components';
 // import * as Sentry from "@sentry/react";
-import * as classnames from 'classnames';
+import classnames from 'classnames';
 import * as H from 'history';
 // import { observer } from 'mobx-react';
 import './index.css';
@@ -58,7 +58,7 @@ class Layout extends React.Component<ILayoutProps, AuthStates> {
     }
 
     componentDidMount(this) {
-        Utils.setLayout(this);
+        // Utils.setLayout(this);
 
         let user = document['user'];
 
@@ -124,18 +124,18 @@ class Layout extends React.Component<ILayoutProps, AuthStates> {
             this.setState(
                 { contentNotify: content },
                 () => {
-                    if (type == 'success')
-                        HrwComponents.Notification.success({
-                            message: content,
-                            duration: duration ? duration : 5,
-                            placement: 'topRight',
-                        })
-                    else if (type == 'error')
-                        HrwComponents.Notification.error({
-                            message: content,
-                            duration: duration ? duration : 5,
-                            placement: 'topRight',
-                        })
+                    // if (type == 'success')
+                    //     HrwComponents.Notification.success({
+                    //         message: content,
+                    //         duration: duration ? duration : 5,
+                    //         placement: 'topRight',
+                    //     })
+                    // else if (type == 'error')
+                    //     HrwComponents.Notification.error({
+                    //         message: content,
+                    //         duration: duration ? duration : 5,
+                    //         placement: 'topRight',
+                    //     })
                 })
         }
     }
@@ -156,10 +156,10 @@ class Layout extends React.Component<ILayoutProps, AuthStates> {
     }
 
     public redirectPagePermission(reqKey: string) {
-        if (reqKey)
-            this.props.routerHistory.push(`${PATH.ERR_Permission}?requestKey=${reqKey}`)
-        else
-            this.props.routerHistory.push(PATH.ERR_Permission)
+        // if (reqKey)
+        //     this.props.routerHistory.push(`${PATH.ERR_Permission}?requestKey=${reqKey}`)
+        // else
+        //     this.props.routerHistory.push(PATH.ERR_Permission)
     }
 
     // openPopupAuthorizeException() {
@@ -216,7 +216,7 @@ class Layout extends React.Component<ILayoutProps, AuthStates> {
             })}>
                 {/* <HeaderOSC onClickMenu={handleClickMenuMobile(this)} isShowMenu={isClickMenuMobile} /> */}
                 <React.Fragment>
-                    <PartialMenuLeft />
+                    {/* <PartialMenuLeft /> */}
                     {isClickMenuMobile && <div className='hrv-btn-close-mobile--eform' onClick={handleClickMenuMobile(this)}>
                         <button className='hrv-btn hrv-btn-default hrv-btn-close' type='button'>
                             {/* <HrwComponents.Icon type='times' theme='regular' /> */}
@@ -224,11 +224,11 @@ class Layout extends React.Component<ILayoutProps, AuthStates> {
                     </div>}
                 </React.Fragment>
                 <main className='ui-main'>
-                    <Components.Notification openNotify={this.state.openNotify}
+                    {/* <Components.Notification openNotify={this.state.openNotify}
                         typeNotify={this.state.typeNotify}
                         messageNotify={this.state.messageNotify}
                         handleCloseNotify={() => this.closeMessage()} />
-                    {this.props.children}
+                    {this.props.children} */}
                 </main>
                 {isClickMenuMobile && <div className='hrv-layout-backdrop' onClick={handleClickMenuMobile(this)}></div>}
             </div>
@@ -239,7 +239,7 @@ class Layout extends React.Component<ILayoutProps, AuthStates> {
 
 }
 
-export default Sentry.withProfiler(observer(Layout))
+// export default Sentry.withProfiler(observer(Layout))
 
 const checkIsMobileDevide = (component: Layout) => {
     if (window.innerWidth < 500) {

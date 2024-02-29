@@ -105,12 +105,12 @@ export const PartialMenuLeft: React.FC<{}> = props => {
         })
 
         return <NavLink
-            exact
+            // exact
             key={index}
             to={link}
-            activeClassName={hasChild ? '' : 'open'}
+            // activeClassName={hasChild ? '' : 'open'}
             className={classNameNavLink}
-            isActive={rootLink ? (m, l) => l.pathname.includes(rootLink) : undefined} // match sub route, only for childs have rootRoute
+        // isActive={rootLink ? (m, l) => l.pathname.includes(rootLink) : undefined} // match sub route, only for childs have rootRoute
         >
             <div className="hrv-menu-item-icon_wrapper">
                 <span className='icon normal-icon'>{icon}</span>
