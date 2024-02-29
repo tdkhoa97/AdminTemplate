@@ -8,11 +8,16 @@
       "dom.iterable",
       "esnext"
     ],
+    "sourceMap": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
+    "types": [
+      "webpack-env"
+    ],
+    "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",

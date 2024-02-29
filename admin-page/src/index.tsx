@@ -1,24 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import ReactDOM from "react-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as RoutesModule from './routes';
 import { AppContainer } from 'react-hot-loader';
 import { Env } from './utils/env'
+import { BrowserRouter } from 'react-router-dom';
 
 let routes = RoutesModule.routes;
 
-const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
-Env.baseUrl = baseUrl;
+// const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
+// Env.baseUrl = baseUrl;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <App />
+  // </React.StrictMode>
 );
 
 // function renderApp() {

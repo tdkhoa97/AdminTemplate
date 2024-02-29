@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouteObject } from 'react-router';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Routes } from 'react-router-dom';
 // import Layout from './layouts/Layout';
 import { history } from '@dev/utils/env';
 
@@ -35,66 +35,23 @@ const lazily = <T extends {}, U extends keyof T>(loader: (x?: string) => Promise
 
 // Pages
 
-const {
-    Error, FallbackLoading,
-    Transaction
-} = lazily(() => import('@dev/pages'))
+// const {
+//     Error, FallbackLoading,
+//     Transaction
+// } = lazily(() => import('@dev/pages'))
 
+// const Transactions = Loader(
+//     lazy(() => import('./src/pages/Transaction'))
+// )
 // export const routes = <Router history={history}>
-//     <Layout routerHistory={history}>
-//         <React.Suspense fallback={<FallbackLoading />}>
-//             <Switch>
-//                 <Route path={'/transaction'} element={<Transaction />} />
+{/* <Layout routerHistory={history}> */ }
 
-
-//                 {/* <Route render={(routeProps) => <Error {...routeProps} errorCode={ERROR_CODE.NOT_FOUND} />} /> */}
-//             </Switch>
-//         </React.Suspense>
-//     </Layout>
+export const routes = <></>
+//  <React.Suspense fallback={<FallbackLoading />}>
+//     <Routes>
+//         <Route path={'/transaction'} element={<Transaction />} />
+//         {/* <Route render={(routeProps) => <Error {...routeProps} errorCode={ERROR_CODE.NOT_FOUND} />} /> */}
+//     </Routes>
+// </React.Suspense>
+{/* </Layout> */ }
 // </Router>
-
-export const routes: RouteObject[] = [
-    {
-        path: '/transaction',
-        element: <Transaction />,
-        //   children: [
-        //     {
-        //       path: '/',
-        //       element: <Overview />
-        //     },
-        //     {
-        //       path: 'overview',
-        //       element: <Navigate to="/" replace />
-        //     },
-        //     {
-        //       path: 'status',
-        //       children: [
-        //         {
-        //           path: '',
-        //           element: <Navigate to="404" replace />
-        //         },
-        //         {
-        //           path: '404',
-        //           element: <Status404 />
-        //         },
-        //         {
-        //           path: '500',
-        //           element: <Status500 />
-        //         },
-        //         {
-        //           path: 'maintenance',
-        //           element: <StatusMaintenance />
-        //         },
-        //         {
-        //           path: 'coming-soon',
-        //           element: <StatusComingSoon />
-        //         }
-        //       ]
-        //     },
-        //     {
-        //       path: '*',
-        //       element: <Status404 />
-        //     }
-        //   ]
-    }
-]
