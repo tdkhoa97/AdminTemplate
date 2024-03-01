@@ -8,6 +8,7 @@ import * as RoutesModule from './routes';
 import { AppContainer } from 'react-hot-loader';
 import { Env } from './utils/env'
 import { BrowserRouter } from 'react-router-dom';
+import { ContextProvider } from "./Contexts/ContextProvider";
 
 let routes = RoutesModule.routes;
 
@@ -18,9 +19,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  // <React.StrictMode>
-  <App />
-  // </React.StrictMode>
+  <ContextProvider>
+    <App />
+  </ContextProvider>
 );
 
 // function renderApp() {
