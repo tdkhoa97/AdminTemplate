@@ -1,2 +1,8 @@
 export { Button } from './Button'
 export { Header } from './Header'
+export { Footer } from './Footer'
+export { Sidebar } from './Sidebar'
+export { ThemeSettings } from './ThemeSettings'
+export { UserProfile } from './UserProfile'
+export { Navbar } from './Navbar'
+export { Notification } from './Notification'

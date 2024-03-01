@@ -1,34 +1,30 @@
-import * as React from 'react';
-import { NavLink } from 'react-router-dom';
-import * as classnames from 'classnames';
-import './index.css';
-export declare type IElementButtonType = 'submit' | 'button'
-export declare type IButtonType = 'primary' | 'secondary' | 'default' | 'default-danger'
-    | 'warning' | 'danger' | 'link' | 'link-danger' | 'link-no-pding' | 'link-danger-no-pding' | 'clean'
-export declare type ITargetType = '_blank' | '_self' | '_parent' | '_top'
+import React from 'react';
 
-interface IButtonProps {
-    id?: string,
-    type?: IButtonType,
-    elementType?: IElementButtonType,
-    classNames?: string,
-    href?: any,
-    target?: ITargetType,
-    disabled?: boolean,
-    handleOnClick?: Function,
-    handleOnMouseLeave?: Function,
-    btnLoading?: boolean,
-    isOG?: boolean
+import { useStateContext } from '../../Contexts/ContextProvider';
+
+interface IProps {
+    icon?: any
+    bgColor?: any
+    color?: string
+    bgHoverColor?: any
+    size?: string
+    text?: string
+    borderRadius?: string
+    width?: string
 }
 
-interface IButtonStates {
-    disabled: boolean,
-    asyncState: any,
-    isUnmounted: boolean
-}
+export const Button = (props: IProps) => {
+    const { icon, bgColor, color, bgHoverColor, size, text, borderRadius, width } = props
+    const { setIsClicked, initialState } = useStateContext();
 
-export const Button = (props: IButtonProps) => {
     return (
-        <div>ABC</div>
-    )
-}
+        <button
+            type="button"
+            onClick={() => setIsClicked(initialState)}
+            style={{ backgroundColor: bgColor, color, borderRadius }}
+            className={` text-${size} p-3 w-${width} hover:drop-shadow-xl hover:bg-${bgHoverColor}`}
+        >
+            {icon} {text}
+        </button>
+    );
+};
