@@ -34,47 +34,8 @@
         "./components/*"
       ],
       "@dev/pages": [
-        "./pages"
+        "./pages/*"
       ]
-      // "@dev/repositories": [
-      //   "ClientApp/repositories"
-      // ],
-      // "@dev/screen": [
-      //   "ClientApp/screens"
-      // ],
-      // "@dev/services": [
-      //   "ClientApp/services"
-      // ],
-      // "@dev/context": [
-      //   "ClientApp/context"
-      // ],
-      // "@dev/interfaces": [
-      //   "ClientApp/interfaces"
-      // ],
-      // "@dev/enums": [
-      //   "ClientApp/enums"
-      // ],
-      // "@dev/components": [
-      //   "/components"
-      // ],
-      // "@dev/bpmComponents": [
-      //   "ClientApp/BPMComponents"
-      // ],
-      // "@dev/stores": [
-      //   "ClientApp/stores"
-      // ],
-      // "@dev/env": [
-      //   "/utils/env.ts"
-      // ],
-      // "@dev/formatHelpers": [
-      //   "ClientApp/utils/FormatHelpers.tsx"
-      // ],
-      // "@dev/_utils": [
-      //   "ClientApp/utils/_utils.tsx"
-      // ],
-      // "@dev/consts": [
-      //   "ClientApp/utils/Constants.ts"
-      // ]
     }
   },
   "include": [

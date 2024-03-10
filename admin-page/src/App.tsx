@@ -6,7 +6,7 @@ import { useStateContext } from './Contexts/ContextProvider';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 
-import { Transaction } from './pages'
+import { Transaction, Products } from './pages'
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 
 // const App = () => {
@@ -87,6 +87,8 @@ function App() {
                 {/* dashboard  */}
                 <Route path="/" element={(<Transaction />)} />
                 <Route path="/ecommerce" element={(<Transaction />)} />
+
+                <Route path="/products" element={(<Products />)} />
               </Routes>
             </div>
             <Footer />
