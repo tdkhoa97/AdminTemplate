@@ -1,4 +1,6 @@
 import React from 'react'
+import Banner from 'assets/banner-pictures.jpg'
+import Banner2 from 'assets/banner2.jpeg'
 
 export const Carousel = () => {
     return (
@@ -10,13 +12,13 @@ export const Carousel = () => {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img className="d-block w-100" src="..." alt="First slide" />
+                    <img className="d-block w-100" src={Banner} alt="First slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src="..." alt="Second slide" />
+                    <img className="d-block w-100" src={Banner2} alt="Second slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src="..." alt="Third slide" />
+                    <img className="d-block w-100" src={Banner} alt="Third slide" />
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

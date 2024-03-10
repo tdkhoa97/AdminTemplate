@@ -8,6 +8,8 @@ import { FiSettings } from 'react-icons/fi';
 
 import { Transaction, Products } from './pages'
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
+import "bootstrap/dist/css/bootstrap.min.css";
+import './assets/css/utils.css';
 
 // const App = () => {
 //   return (
