@@ -28,6 +28,7 @@ export const Button = (props: IProps) => {
     const { setIsClicked, initialState } = useStateContext();
 
     let classes = classnames.default({
+        'cursor': 'pointer',
         'btn btn-primary': type == 'primary',
         'btn btn-secondary': type == 'secondary',
         'btn btn-default': type == 'default',
@@ -47,10 +48,12 @@ export const Button = (props: IProps) => {
             type="button"
             onClick={() => setIsClicked(initialState)}
             style={{ backgroundColor: bgColor, color, borderRadius }}
-            className={`${classes} text-${size} p-3 `}
+            className={`${classes}`}
         >
-            <span>{text}</span>
-            <span className='ml-3'>{icon}</span>
+            <div className='d-flex align-items-center'>
+                <span>{text}</span>
+                <span className='ml-3'>{icon}</span>
+            </div>
         </button>
     );
 };
