@@ -1,4 +1,4 @@
 export * from './Transaction'
 export * from './Error'
 export * from './FallbackLoading'
-export * from './Products'
+export { Products, ProductDetail } from './Products/index'

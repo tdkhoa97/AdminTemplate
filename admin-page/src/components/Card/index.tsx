@@ -1,58 +1,62 @@
 import React from 'react'
-import 'index.css';
+import { Link } from 'react-router-dom'
+import './index.css';
 import { Button } from '..';
 import { nextIcon, locationIcon } from '../../utils/icon'
+
 interface IProps {
     image?: string
     title?: string
     description?: string
     location?: string
-    landArea?: number
+    landAreaSquare?: string
 }
 
 export const Card = (props: IProps) => {
-    const { image, title, description } = props
+    const { image, title, description, location, landAreaSquare } = props
 
     const renderLocation = () => {
         return <div className='d-flex'>
-            <span>Vị trí: <span>{locationIcon()}</span></span>
-            <span>Hồ Chí Minh</span>
+            <span className='d-flex align-items-center'>Vị trí <span style={{ marginLeft: '4px' }}>{locationIcon(18, 18)}</span>: </span>
+            &nbsp;
+            <span>{location}</span>
         </div>
     }
 
     const renderLandArea = () => {
         return <div>
-            <span>Diện tích: { }</span>
-            <span></span>
+            <span>Diện tích: </span>
+            <span>{landAreaSquare}</span>
         </div>
     }
 
     return (
-        <div className="card bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-            style={{ height: '500px' }}>
-            <div >
-                <img className="image rounded-t-lg" src={image} alt="" />
-            </div>
-            <div className="p-4">
-                <div className="title mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {title}
+        <Link to={'/product-detail'} >
+            <div className="card bg-white border  rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                style={{ height: '500px' }}>
+                <div className='d-flex justify-content-center img-wrapper'>
+                    <img className="image" src={image} alt="" />
                 </div>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                <div>
-                    {renderLocation()}
-                    {renderLandArea()}
+                <div className="content-wrapper">
+                    <div className="title mb-2 dark:text-white">
+                        {title}
+                    </div>
+                    <div>
+                        {location && renderLocation()}
+                        {landAreaSquare && renderLandArea()}
+                    </div>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                        {description}
+                    </p>
+                    <div className='footer'>
+                        <Button
+                            type='primary'
+                            text='Chi tiết'
+                            icon={nextIcon()}
+                        />
+                    </div>
                 </div>
-                <Button
-                    type='primary'
-                    text='Chi tiết'
-                    icon={nextIcon()} />
-                {/* <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Chi tiết
-                    <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </a> */}
             </div>
-        </div>
+        </Link>
     )
 }

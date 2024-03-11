@@ -1,0 +1,9 @@
+.product-detail {}
+
+.product-detail .img-wrapper {
+    height: 40vh;
+}
+
+.product-detail .price {
+    color: orange;
+}

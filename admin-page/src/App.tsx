@@ -6,7 +6,7 @@ import { useStateContext } from './Contexts/ContextProvider';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 
-import { Transaction, Products } from './pages'
+import { Transaction, Products, ProductDetail } from './pages'
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './assets/css/utils.css';
@@ -91,6 +91,7 @@ function App() {
                 <Route path="/ecommerce" element={(<Transaction />)} />
 
                 <Route path="/products" element={(<Products />)} />
+                <Route path="/product-detail" element={(<ProductDetail />)} />
               </Routes>
             </div>
             <Footer />

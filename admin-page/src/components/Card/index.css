@@ -1,8 +1,25 @@
+.card {
+    position: relative;
+}
+
 .card .title {
     font-size: 18px;
-    line-height: 28px;
-    font-weight: normal !important;
+    line-height: 22px;
+    font-weight: 500;
     letter-spacing: -.2px;
     color: #2C2C2C;
-    padding: 24px 16px 16px;
+}
+
+.card .img-wrapper {
+    height: 240px;
+    padding: 12px;
+}
+
+.card .content-wrapper {
+    padding: 0 24px;
+}
+
+.card .footer {
+    position: absolute;
+    bottom: 12px;
 }
