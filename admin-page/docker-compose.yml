@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  app:
+    container_name: admin-page-c
+    image: admin-page-i
+    build: context.
+    ports: -8080:80

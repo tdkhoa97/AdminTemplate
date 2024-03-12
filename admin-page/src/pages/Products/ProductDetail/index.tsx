@@ -29,6 +29,8 @@ export const ProductDetail = () => {
     const [price, setPrice] = useState(7.5)
     const [unit, setUnit] = useState(Unit.Billion)
     const [pricePerSquare, setPricePerSquare] = useState()
+    const [saleDate, setSaleDate] = useState(new Date())
+
     return (
         <div className='product-detail'>
             <div className='img-wrapper'>
