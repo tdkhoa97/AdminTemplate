@@ -3,5 +3,7 @@ services:
   app:
     container_name: admin-page-c
     image: admin-page-i
-    build: context.
-    ports: -8080:80
+    build:
+      context: .
+    ports:
+      - 8080:80
